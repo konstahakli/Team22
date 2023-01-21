@@ -1,0 +1,38 @@
+body{
+    margin-left: 40px;
+    margin-right: 40px;
+    
+}
+    a:hover{
+        color:blue;
+        
+    }
+    
+    img{
+        padding: 10px;
+        width: 200px;
+    
+    }
+
+    
+     section{
+        display:flex;
+        gap: 12px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    article{
+        flex: 3;
+    }
+    article:nth-of-type(0){
+        flex:7;
+    }
+
+    footer{
+        text-align: center;
+    }
+    
+
+    
+
+    
