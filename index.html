@@ -6,31 +6,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konsta Häkli - Exercises 4</title>
+    <title>Team 22 - Project Work</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
     <style>
-        
-        body {
+      ul {
+        list-style-type: none;
         margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #d2d2d2;
       }
-
-      header, footer {
-        background: white;
-        height: 70px;
+      
+      li {
+        float: left;
       }
-
-      h1 {
-        color: black;
-        line-height: 70px;
-        margin: 0;
-      }
-
-      article {
+      
+      li a {
+        display: block;
         padding: 10px;
-        margin: 10px;
-        background: white;
-
       }
       </style>
 </head>
@@ -38,16 +34,13 @@
     <header>
         <h1>Lounasravintola Havu</h1>
       </header>
-      <div class="main">
-        <sidebar style="flex-grow:2;">
-            <li><a href="ruokalista.html">Ruokalista</a></li>
-            <li><a href="tietoameista.html">Tietoa meistä</a></li>
-            <li><a href="yhteistiedot.html">Yhteistiedot</a></li>
-        </sidebar>
-
-      <section>
-        
-        <article>
+      <ul>
+        <li><a href="ruokalista.html">Ruokalista</a></li>
+        <li><a href="tietoameista.html">Tietoa meistä</a></li>
+        <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+      </ul>
+      <main class="row">
+        <div class="col-5">
           <h2>Tervetuloa Lounasravintolaamme</h2>
           <p>
             Lounasravintola Havu on herkullisen kotiruuan ja suussasulavien leivonnaisten sekä pikkusuolaisten koti Hämeenlinnan kampuksella. Lounasruokavalikoimamme koostuu salaattibuffetin lisäksi kahdesta muusta lämpimästä ruokavaihtoehdosta. 
@@ -58,14 +51,25 @@
             Ravintola Havu on viihtyisä lounasravintola Hämeenlinnassa.
             Tarjoamme vaihtelevan herkullisen lounaspöydän arkipäivisin.
           </p>
-        </article>
-      </section> 
-    </div>
+        </div>
+        <div class="col-6">
+          <h2>Aukioloajat <img src="assets/images/Havu.png" alt="opensource image" style="float:right; margin-left: 15px;"></h2>
+          <p>Maanantai: 9:00-15:00 </p>
+          <p>Tiistai: 9:00-15:00</p>
+          <p>Keskiviikko: 9:00-15:00</p>
+          <p>Torstai: 9:00-15:00</p>
+          <p>Perjantai: 9:00-15:00</p>
+          <p>Lauantai: Suljettu</p>
+          <p>Sunnuntai: Suljettu</p>
+        </div>
+        </main>
       <footer>
         <address>
             Hämeenlinna ammattikorkeakoulu<br>
             Hämeenlinna 13100<br>
         </address>
     </footer>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </body>
 </html>
