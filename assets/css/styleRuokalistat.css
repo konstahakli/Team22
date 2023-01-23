@@ -32,13 +32,15 @@ article:nth-of-type(0) {
     flex: 7;
 }
 
-footer {
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #efefef;
     text-align: center;
-    border-radius: 4em; 
-    background: rgb(255, 146, 146);
-
-    
-}
+    border-radius: 4em
+  }
 
 article {
     padding: 40px;
@@ -48,8 +50,7 @@ article {
 }
 .row{
     margin-top: 10px;
-    border-radius: 4em
-    
+
 }
 h1{
     margin-top: 10px;
