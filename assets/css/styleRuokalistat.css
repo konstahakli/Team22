@@ -34,7 +34,8 @@ article:nth-of-type(0) {
 
 footer {
     text-align: center;
-    border-radius: 3em; 
-    background: rgb(163, 124, 124);
-    margin-top: auto;
+    border-radius: 4em; 
+    background: rgb(255, 146, 146);
+
+    
 }
