@@ -10,8 +10,7 @@ a:hover {
 }
 
 img {
-    padding: 10px;
-    width: 200px;
+    max-width: 100%;
 
 }
 
@@ -33,14 +32,14 @@ article:nth-of-type(0) {
 }
 
 .footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #efefef;
-    text-align: center;
-    border-radius: 4em
-  }
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
+  border-radius: 4em
+}
 
 article {
     padding: 40px;
@@ -65,7 +64,6 @@ ul {
 
 form {
     /* Center the form on the page */
-    margin: 0 auto;
     width: 400px;
     /* Form outline */
     padding: 1em;
@@ -87,7 +85,7 @@ form {
     /* Uniform size & alignment */
     display: inline-block;
     width: 90px;
-    text-align: right;
+    text-align: left;
   }
   
   input,
