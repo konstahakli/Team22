@@ -10,24 +10,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="assets/css/rekrystyle.css" rel="stylesheet" type="text/css">
-
     <style>
         body {
             margin-right: 240px;
             margin-left: 240px;
             background-image: url(assets/images/backgroundFood.jpg);
             background-repeat: repeat;
-
         }
 
         ul {
             display: block;
             margin: auto;
         }
+
+        h2, p {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
+    <script>
+        function lahetaHakemus(lomake) {
+            var hakemus = new Object();
+            hakemus.etunimi = lomake.etunimi.value;
+            hakemus.sukunimi = lomake.sukunimi.value;
+            hakemus.puhelinnumero = lomake.puhelinnumero.value;
+            hakemus.osoite = lomake.osoite.value;
+            hakemus.postinumero = lomake.postinumero.value;
+            hakemus.postitoimipaikka = lomake.postitoimipaikka.value;
+            hakemus.syntymaaika = lomake.syntymaaika.value;
+            hakemus.sahkoposti = lomake.sahkoposti.value;
+            hakemus.lisatietoa = lomake.lisatietoa.value;
+            var jsonHakemus = JSON.stringify(hakemus);
+
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("result").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("POST", "lisaahakemus.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("hakemus=" + jsonHakemus);
+        }
+
+    </script>
+
     <h1>Lounasravintola Havu</h1>
     <a class="navbar-brand" href="index.html">
     </a>
@@ -64,47 +93,37 @@
             </div>
         </nav>
     </header>
-
     <article>
         <h1>Työnhakulomake</h1> <br>
-        <form id='tyohakulomake'>
+        <form id='hakemus'>
             <ul>
-                <h5>Haettu paikka:</h5>
-                Tarjoilija <input type='checkbox' name='tarjoilija' value=''> <br>
-                Siivooja <input type='checkbox' name='osoite' value=''><br>
-                Kokki <input type='checkbox' value=''><br>
-                Ravintolapäälikkö <input type='checkbox' name='' value=''>
-                </li>
-                <hr>
-                Lisää CV: <br>
-                <input type="file" name="fileToUpload" id="fileToUpload"> <br>
-                <hr>
-                Etunimi: <br> <input type='text' name='etunimi' value='' placeholder='Etunimi'><br>
-                Sukunimi: <br> <input type='text' name='sukunimi' value='' placeholder='Sukunimi'><br>
-                Puhelinnumero: <br> <input type='text' name='puhelinnumero' value='' placeholder='Puhelinnumero'><br>
-                Osoite: <br> <input type='text' name='osoite' value='' placeholder='Osoite'><br>
-                Postinumero: <br> <input type='text' name='postinumero' value='' placeholder='Postinumero'><br>
-                Postitoimipaikka: <br> <input type='text' name='postitoimipaikka' value=''
-                    placeholder='Postitoimipaikka'><br>
-                Syntymäaika: <br> <input type='date' name='osoite' value='' placeholder='Syntymäaika'><br>
-                Sähkoposti: <br> <input type='email' name='sahkoposti' value='' placeholder='Sähköposti'><br>
-                Lisätietoja: <textarea id="msg" name="user_message"></textarea><br>
+                Etunimi: <input type='text' name='etunimi' value='' required><br>
+                Sukunimi: <input type='text' name='sukunimi' value=''required><br>
+                Puhelinnumero: <input type='tel' name='puhelinnumero' value='' required><br>
+                Osoite: <input type='text' name='osoite' value='' required><br>
+                Postinumero: <input type='text' name='postinumero' value='' required><br>
+                Postitoimipaikka: <input type='text' name='postitoimipaikka' value='' required><br>
+                Syntymäaika: <input type='date' name='syntymaaika' value='' required><br>
+                Sähköposti: <input type='email' name='sahkoposti' value='' required><br>
+                Lisätietoja: <input type='text' name='lisatietoa' value='' required><br>
                 <input type='button' name='ok' value='Lähetä' onclick='lahetaHakemus(this.form);'><br>
             </ul>
+            <br>
         </form>
-
+        <p id='result'>
+        </p>
     </article>
 
-    </section>
-    <footer>
-        <address>
-            Hämeenlinna ammattikorkeakoulu<br>
-            Hämeenlinna 13100<br>
-        </address>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
 </body>
+
+<footer>
+    <address>
+        Hämeenlinna ammattikorkeakoulu<br>
+        Hämeenlinna 13100<br>
+    </address>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 
 </html>
