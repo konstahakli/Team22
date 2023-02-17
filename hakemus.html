@@ -23,7 +23,8 @@
             margin: auto;
         }
 
-        h2, p {
+        h2,
+        p {
             text-align: center;
         }
     </style>
@@ -87,33 +88,38 @@
                         <li class="nav-item">
                             <a class="nav-link" href="rekry.html"><b>Rekry</b></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kirjaudu.php"><b>Kirjaudu</b></a>
+                          </li>
 
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <article>
-        <h1>Työnhakulomake</h1> <br>
-        <form id='hakemus'>
-            <ul>
-                Etunimi: <input type='text' name='etunimi' value='' ><br>
-                Sukunimi: <input type='text' name='sukunimi' value=''><br>
-                Puhelinnumero: <input type='tel' name='puhelinnumero' value='' ><br>
-                Osoite: <input type='text' name='osoite' value='' ><br>
-                Postinumero: <input type='text' name='postinumero' value='' ><br>
-                Postitoimipaikka: <input type='text' name='postitoimipaikka' value='' ><br>
-                Syntymäaika: <input type='date' name='syntymaaika' value='' ><br>
-                Sähköposti: <input type='email' name='sahkoposti' value='' ><br>
-                Lisätietoja: <input type='text' name='lisatietoa' value='' ><br>
-                <input type='button' name='ok' value='Lähetä' onclick='lahetaHakemus(this.form);'><br>
-            </ul>
-            <br>
-        </form>
-        <p id='result'>
-        </p>
-    </article>
-
+    <section>
+        <article>
+            <h1>Työnhakulomake</h1> <br>
+            <form id='hakemus'>
+                <ul>
+                    Etunimi: <input type='text' name='etunimi' value=''><br>
+                    Sukunimi: <input type='text' name='sukunimi' value=''><br>
+                    Puhelinnumero: <input type='tel' name='puhelinnumero' value=''><br>
+                    Osoite: <input type='text' name='osoite' value=''><br>
+                    Postinumero: <input type='text' name='postinumero' value=''><br>
+                    Postitoimipaikka: <input type='text' name='postitoimipaikka' value=''><br>
+                    Syntymäaika: <input type='date' name='syntymaaika' value=''><br>
+                    Sähköposti: <input type='email' name='sahkoposti' value=''><br>
+                    Lisätietoja: <textarea rows="4" cols="50" name="lisatietoa" form="hakemus"></textarea>
+                    <input type='button' name='ok' value='Lähetä' onclick='lahetaHakemus(this.form);'>
+                    <input type="reset" value="Nollaa"><br>
+                </ul>
+                <br>
+            </form>
+            <p id='result'>
+            </p>
+        </article>
+    </section>
 </body>
 
 <footer>
