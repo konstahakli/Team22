@@ -27,6 +27,16 @@
         p {
             text-align: center;
         }
+
+        div {
+            margin-bottom: 5px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -90,7 +100,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="kirjaudu.php"><b>Kirjaudu</b></a>
-                          </li>
+                        </li>
 
                     </ul>
                 </div>
@@ -102,19 +112,54 @@
             <h1>Työnhakulomake</h1> <br>
             <form id='hakemus'>
                 <ul>
-                    Etunimi: <input type='text' name='etunimi' value=''><br>
-                    Sukunimi: <input type='text' name='sukunimi' value=''><br>
-                    Puhelinnumero: <input type='tel' name='puhelinnumero' value=''><br>
-                    Osoite: <input type='text' name='osoite' value=''><br>
-                    Postinumero: <input type='text' name='postinumero' value=''><br>
-                    Postitoimipaikka: <input type='text' name='postitoimipaikka' value=''><br>
-                    Syntymäaika: <input type='date' name='syntymaaika' value=''><br>
-                    Sähköposti: <input type='email' name='sahkoposti' value=''><br>
-                    Lisätietoja: <textarea rows="4" cols="50" name="lisatietoa" form="hakemus"></textarea>
-                    <input type='button' name='ok' value='Lähetä' onclick='lahetaHakemus(this.form);'>
-                    <input type="reset" value="Nollaa"><br>
+                    <form action='./paivitatiedot.php' method='post'>
+
+                        <div>
+                            <label>Etunimi:</label>
+                            <input type='text' name='etunimi' value=''>
+                        
+                        <div>
+                            <label>Sukunimi:</label>
+                            <input type='text' name='sukunimi' value=''>
+                        </div>
+                        <div>
+                            <label>Puhelinnumero:</label>
+                            <input type='tel' name='puhelinnumero' value=''>
+                        </div>
+                        <div>
+                            <label>Osoite:</label>
+                            <input type='text' name='osoite' value=''>
+                        </div>
+                        <div>
+                            <label>Postinumero:</label>
+                            <input type='text' name='postinumero' value=''>
+                        </div>
+                        <div>
+                            <label>Postitoimipaikka:</label>
+                            <input type='text' name='postitoimipaikka' value=''>
+                        </div>
+                        <div>
+                            <label>Syntymäaika:</label>
+                            <input type='date' name='syntymaaika' value=''>
+                        </div>
+                        <div>
+                            <label>Sähköposti:</label>
+                            <input type='email' name='sahkoposti' value=''>
+                        </div>
+                        <div>
+                            <label>Lisätietoja:</label>
+                            <textarea rows="4" cols="50" name="lisatietoa" form="hakemus"></textarea>
+                        </div>
+                        <div>
+                            <label></label>
+                            <input type='button' name='ok' value='Lähetä' onclick='lahetaHakemus(this.form);'>
+                            <input type="reset" value="Nollaa"><br>
+                        </div>
+
+                    </form>
+
                 </ul>
-                <br>
+
             </form>
             <p id='result'>
             </p>

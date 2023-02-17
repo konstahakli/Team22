@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,56 +79,59 @@
             </div>
         </nav>
     </header>
+
     <body>
-<?php
+        <?php
 
-$muokattava = isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
+        $muokattava = isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
 
 
-if (empty($muokattava)) {
-    header("Location:./vaatiikirjautumisen.php");
-    exit;
-}
-mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
-try {
-    $yhteys = mysqli_connect("db", "root", "password", "hTiedotkanta");
-} catch (Exception $e) {
-    header("Location:./vaatiikirjautumisen.php");
-    exit;
-}
-$sql = "select * from hakemus where id=?";
-$stmt = mysqli_prepare($yhteys, $sql);
+        if (empty($muokattava)) {
+            header("Location:./vaatiikirjautumisen.php");
+            exit;
+        }
+        mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
+        try {
+            $yhteys = mysqli_connect("db", "root", "password", "hTiedotkanta");
+        } catch (Exception $e) {
+            header("Location:./vaatiikirjautumisen.php");
+            exit;
+        }
+        $sql = "select * from hakemus where id=?";
+        $stmt = mysqli_prepare($yhteys, $sql);
 
-mysqli_stmt_bind_param($stmt, 'i', $muokattava);
-//Suoritetaan sql-lause
-mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_param($stmt, 'i', $muokattava);
+        //Suoritetaan sql-lause
+        mysqli_stmt_execute($stmt);
 
-$tulos = mysqli_stmt_get_result($stmt);
-if (!$rivi = mysqli_fetch_object($tulos)) {
-    header("Location:./vaatiikirjautumisen.php");
-    exit;
-}
-?>
-<section>
-    <article>
-        <h2>Muokkaa hakemusta </h2>
-<form action='./paivitatiedot.php' method='post'>
-    id:<input type='text' name='id' value='<?php print $rivi->id; ?>' readonly><br>
-    Etunimi:<input type='text' name='etunimi' value='<?php print $rivi->etunimi; ?>'><br>
-    Sukunimi: <input type='text' name='sukunimi' value='<?php print $rivi->sukunimi; ?>'><br>
-    Puhelinnumero: <input type='tel' name='puhelinnumero' value='<?php print $rivi->puhelinnumero; ?>' ><br>
-    Osoite: <input type='text' name='osoite' value='<?php print $rivi->osoite; ?>' ><br>
-    Postinumero: <input type='text' name='postinumero' value='<?php print $rivi->postinumero; ?>' ><br>
-    Postitoimipaikka: <input type='text' name='postitoimipaikka' value='<?php print $rivi->postitoimipaikka; ?>' ><br>
-    Syntymäaika: <input type='date' name='syntymaaika' value='<?php print $rivi->syntymaaika; ?>' ><br>
-    Sähköposti: <input type='email' name='sahkoposti' value='<?php print $rivi->sahkoposti; ?>' ><br>
-    Lisätietoja: <input type='text' name='lisatietoja' value='<?php print $rivi->lisatietoja; ?>' ><br>
-    <input type='submit' name='ok' value='ok'><br>
-</form>
-</article>
-</section>
-<!-- loppuun uusi php-osuus -->
-<?php
+        $tulos = mysqli_stmt_get_result($stmt);
+        if (!$rivi = mysqli_fetch_object($tulos)) {
+            header("Location:./vaatiikirjautumisen.php");
+            exit;
+        }
+        ?>
+        <section>
+            <article>
+                <h2>Muokkaa hakemusta </h2>
+                <form action='./paivitatiedot.php' method='post'>
+                    id:<input type='text' name='id' value='<?php print $rivi->id; ?>' readonly><br>
+                    Etunimi:<input type='text' name='etunimi' value='<?php print $rivi->etunimi; ?>'><br>
+                    Sukunimi: <input type='text' name='sukunimi' value='<?php print $rivi->sukunimi; ?>'><br>
+                    Puhelinnumero: <input type='tel' name='puhelinnumero'
+                        value='<?php print $rivi->puhelinnumero; ?>'><br>
+                    Osoite: <input type='text' name='osoite' value='<?php print $rivi->osoite; ?>'><br>
+                    Postinumero: <input type='text' name='postinumero' value='<?php print $rivi->postinumero; ?>'><br>
+                    Postitoimipaikka: <input type='text' name='postitoimipaikka'
+                        value='<?php print $rivi->postitoimipaikka; ?>'><br>
+                    Syntymäaika: <input type='date' name='syntymaaika' value='<?php print $rivi->syntymaaika; ?>'><br>
+                    Sähköposti: <input type='email' name='sahkoposti' value='<?php print $rivi->sahkoposti; ?>'><br>
+                    Lisätietoja: <input type='text' name='lisatietoja' value='<?php print $rivi->lisatietoja; ?>'><br>
+                    <input type='submit' name='ok' value='ok'><br>
+                </form>
+            </article>
+        </section>
+        <!-- loppuun uusi php-osuus -->
+        <?php
 
-mysqli_close($yhteys);
-?>
+        mysqli_close($yhteys);
+        ?>
