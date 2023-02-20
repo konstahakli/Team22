@@ -21,6 +21,7 @@ if (!isset($_SESSION["paluuosoite"])) {
             margin-left: 240px;
             background-image: url(assets/images/backgroundFood.jpg);
             background-repeat: repeat;
+            text-align: center;
 
         }
 
