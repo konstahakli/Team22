@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lounasravintola Havun nettisivut">
+  <title>Team 22 - Project Work</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="assets/css/rekrystyle.css" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      margin-right: 60px;
+      margin-left: 60px;
+      background-image: url(assets/images/backgroundFood.jpg);
+      background-repeat: repeat;
+    }
+
+    ul {
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lounasravintola Havu</h1>
+  <header class="row">
+    <nav class="navbar navbar-expand-lg bg-secondary-subtle rounded-pill ">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div></div>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"><b>Etusivu</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="ruokalista.html"><b>Ruokalista</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tietoameista.html"><b>Tietoa meistä</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="yhteystiedot.html"><b>Yhteystiedot</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="rekry.html"><b>Rekry</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kirjaudu.php"><b>Kirjaudu</b></a>
+            </li>
+        </div>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <article>
+        <h2>Ryhmän dokumentointi</h2>
+        <p> Aloitamme verkkosivuprojektin. Verkkosivuprojektin pääajatuksena on luoda toiminnallinen verkkosivu. 
+            Verkkosivullamme tulee olemaan tietokanta, syöttölomake sekä pääkäyttäjä oikeuksineen. 
+            Runkona käytämme luomaamme lounasravintola Havu-sivustoa. 
+            Sivustolle tulemme luomaan syöttölomakkeen työnhakua varten. Käyttäjä voi siis hakea töihin ravintolaan sen verkkosivujen kautta. Tämä osio toteutetaan Ajax-ohjelmalla. Käyttäjän palautteesta eli työhakemuksista luodaan verkkosivuun liittyvä PHP-tietokanta. Tähän tietokantaan mahdollistetaan rajoitettu pääsy pääkäyttäjälle. Sivusto muotoillaan uudestaan lisäämällä painonappi/linkki josta käyttäjä pääsee lisäämään lomakkeelle tarvittavat tiedot työnhakukaavakkeelle. 
+            Työnhakukaavakkeella kysytään käyttäjältä tiedot etunimi,sukunimi, osoite,puhnro sekä sähköpostiosoite. Osoite eriytyy postinumeroon ja postitoimipaikkaan. Kenttiin lisätään myös lisätietoja-kenttä. Yhteensä siis 9kpl syöttökenttiä. Tietokannassa pääavainkenttänä on id-kenttä juoksevalla numeroinnilla. Käyttäjän lisäämä työnhakukaavake siis lisätään tietokantaan. Tietokannan pääkäyttäjä pääsee näkemään, lisäämään ja muokkkaamaan ko. tietoja tietokannassa. 
+            Pääkäyttäjän pääsy tietokantaan on varmistettu salasanalla. Koko tietokanta on suojattu salasanalla.<br>
+            <b>13.2.2023</b><br>
+            Projektin määrittely, toimintamallien sopiminen, alustava työnjako. Alustana aiempi verkkosivusto lounasravintola Havu. Tavoitteena muodostaa sivulle rekrytointiosio. Osio käsittää syöttölomakkeen(Ajax), PHP-tietokannan sekä pääkäyttäjän tietokannalle. 
+            Pääkäyttäjä määritellään ainoaksi jolla oikeudet lukea/poistaa/lisätä tietokantaan.<br>
+            
+            <b>14.2.2023</b><br>
+            Tietokannan luonti, ylläpitäjän oikeuksien määritteleminen. Tietokannan ominaisuuksien määrittely. 
+            Tietokannan avainkentän luominen. Tietokannan kaikkien kenttien luominen.<br>
+            
+            <b>15.2.2023</b><br>
+            Tietokannan preparointia. Verkkosivun ulkonäön muokkausta. 
+            Toiminnallisuuden testausta. Tietokannan virheenkorjaus. Syöttölomakkeen korjaus.<br>
+
+            <b>17.2.2023</b><br>
+                Verkkosivun layoutin säätämistä (pääkäyttäjän näkökulma). Diagrammi verkkoprojektista. Värimaailman hakemista. Toiminnan tarkastelua.<br>
+            <b>Loppu lauseet</b><br>
+            Projekti onnistui loppujen lopuksi hyvin, kun kaikki puhalsi yhteen hiileen niin saimme korjattua kaikki viat mitä projektissamme oli. Saimme ulkoasun viilattua tyydyttäväksi, kuin myös toiminnallisuuden. Muutimme hieman alkuperäistä staattisen verkkosivun tunneilla rakennettua sivua. Lisäsimme toiminnallisuutta esimerkiksi kirjautumis-sivut ja tällä rekisteröintisivut, joka tallentaa tunnukset tietokantaan. 
+            Pääkäyttäjä pääsee muokkaamaan ja poistamaan lähetettyjä hakemuksia.  
+            </p> 
+    </article>
+  </section>
+  <footer>
+    <address>
+      Hämeenlinna ammattikorkeakoulu<br>
+      Hämeenlinna 13100<br>
+    </address>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
